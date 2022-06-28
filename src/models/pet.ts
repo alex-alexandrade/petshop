@@ -1,3 +1,5 @@
+import { getCipherInfo } from "crypto"
+
 /*
 VAMOS PRECISAR DE 3 AÇÕES DIFERENTES
 1. PEGAR TODOS OS PETS 
@@ -151,7 +153,7 @@ export const Pet = {
     getFromName: (name: string): Pet[] => {
         return data.filter(item =>{
 
-            if(item.name.indexOf(name) > -1) {
+            if(item.name.toLocaleLowerCase().indexOf(name.toLocaleLowerCase()) > -1) {
                 return true
             }else{
                 return false
